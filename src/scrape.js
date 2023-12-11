@@ -1,12 +1,12 @@
-// type Listing = {
-//   title: string,
-//   description: string,
-//   price: string,
-//   publishedAt: Date,
-//   place: string,
-//   images: string[],
-//   attributes: { label: string, value: string }[],
-// };
+
+import { type } from "os";
+import * as puppeteer from "puppeteer";
+import { parse } from "date-fns";
+import * as fs from "fs";
+import * as path from "path";
+import mongoose from "mongoose";
+const { Schema, model } = mongoose;
+
 
 const getListings = async ({ p = 0 }) => {
   const page = await browser.newPage();
