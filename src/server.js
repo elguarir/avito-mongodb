@@ -29,6 +29,11 @@ app.get("/listing", (req, res) => {
 app.post("/listing", async (req, res) => {
   const listing = req.body;
   const result = await Listing.create(listing);
-  // console.log(result.);
-  res.json({ success: true, listing: result.toJSON() });
+  res.json({ success: true, listing: result });
+});
+
+
+app.get("/listings", async (req, res) => {
+  const result = await Listing.find();
+  res.json({ success: true, result: result });
 });
